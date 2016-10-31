@@ -1,2 +1,3 @@
 # hq-api
+
 Headquarter api
