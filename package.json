@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "api-dev": "nodemon src/api/app.js",
+    "api-start": "node src/api/app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "co": "^4.6.0",
-    "hapi": "^15.1.1"
+    "hapi": "^16.0.1"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"

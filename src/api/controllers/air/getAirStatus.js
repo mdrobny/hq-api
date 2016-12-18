@@ -2,7 +2,7 @@
 
 const co = require('co');
 
-function* getAir(request, reply) {
+function* getAirStatus(req, reply) {
     return reply({
         detectorId: 0,
         results: [
@@ -25,4 +25,4 @@ function* getAir(request, reply) {
     });
 }
 
-module.exports = co.wrap(getAir);
+module.exports = co.wrap(getAirStatus);
