@@ -1,23 +1,32 @@
 const co = require('co');
 const Hapi = require('hapi');
+const joi = require('joi');
 
 const server = new Hapi.Server();
 
 const errorHandler = require('./controllers/errorHandler');
 const getAirStatus = require('./controllers/air/getAirStatus');
-const getCpuUsage = require('./controllers/cpu/getCpuUsage');
+const getCpuStatus = require('./controllers/cpu/getCpuStatus');
 
-const config = require('../config');
+const config = require('./config');
 
 server.connection({
     host: 'localhost',
-    port: config.HTTP_PORT
+    port: config.api.httpPort
 });
 
 server.route({
 	method: 'GET',
-	path: '/cpu/usage',
-	handler: errorHandler(getCpuUsage)
+	path: '/cpu/status',
+	handler: errorHandler(getCpuStatus),
+    config: {
+        validate: {
+            query: {
+                startDate: joi.date().iso().required(),
+                endDate: joi.date().iso().required()
+            }
+        }
+    }
 });
 
 server.route({

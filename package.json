@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "api-dev": "nodemon src/api/app.js",
-    "api-start": "node src/api/app.js"
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "co": "^4.6.0",
-    "hapi": "^16.0.1"
+    "hapi": "^16.0.1",
+    "ioredis": "^2.4.3",
+    "joi": "^10.1.0"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
